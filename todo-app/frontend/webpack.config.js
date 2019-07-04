@@ -1,11 +1,11 @@
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
+ 
 module.exports = {
     entry: './src/index.jsx',
     output: {
         path: __dirname + '/public',
-        filename: './app.jsx'
+        filename: './app.js'
     },
     devServer: {
         port: 8080,
@@ -17,7 +17,7 @@ module.exports = {
             modules: __dirname + '/node_modules'
         }
     },
-    plugins: [
+    plugins: [ 
         new ExtractTextPlugin('app.css')
     ],
     module: {
@@ -30,14 +30,11 @@ module.exports = {
                 plugins: ['transform-object-rest-spread']
             }
         }, {
-            test:/\.css$/,
+            test: /\.css$/,
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
         }, {
             test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
-            loader:'file'
-        }
-    
-    ]
+            loader: 'file'
+        }]
     }
-
 }
