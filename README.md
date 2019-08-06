@@ -2,7 +2,7 @@
 Codigos das aulas de React e Redux
 
 Faça download
-instale as dependencias nas pastas backend e fronend: npm install
+instale as dependencias nas pastas backend e frontend: npm install
 
 Rode no backend:
 npm run dev
